@@ -1,0 +1,163 @@
+<div class="cc-auth">
+
+  <!-- ═══ Showcase panel ═══ -->
+  <aside class="cc-auth__panel">
+    <img class="cc-auth__photo"
+         src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1200&q=80&fit=crop"
+         alt="Students celebrating at a college event">
+
+    <div class="cc-auth__badges">
+      <span><i class="bi bi-cash-stack"></i> ₹4.2 Cr in prizes</span>
+      <span><i class="bi bi-award-fill"></i> Verified certificates</span>
+      <span><i class="bi bi-lightning-fill"></i> 2-minute sign-up</span>
+    </div>
+
+    <figure class="cc-auth__quote">
+      <blockquote>
+        <i class="bi bi-quote"></i>
+        Hosting RoboWars on CampusClash cut our registration and judging
+        workload in half — and tripled participation.
+      </blockquote>
+      <figcaption>
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=96&h=96&fit=crop&crop=faces"
+             alt="Prof. R. Mohanty">
+        <div>
+          <strong>Prof. R. Mohanty</strong>
+          <span>Competition Convener, NIT Rourkela</span>
+        </div>
+      </figcaption>
+    </figure>
+  </aside>
+
+  <!-- ═══ Form column ═══ -->
+  <main class="cc-auth__form-col">
+    <div class="cc-auth__top">
+      <a class="cc-brand" href="#">
+        <span class="cc-brand__mark"><i class="bi bi-trophy-fill"></i></span>
+        Campus<span class="cc-brand__accent">Clash</span>
+      </a>
+      <span class="cc-auth__switch d-none d-sm-inline">
+        Already a member? <a href="#" routerLink="/login">Log in</a>
+      </span>
+    </div>
+
+    <div class="cc-auth__card">
+      <h1 class="cc-auth__title">Create your account</h1>
+      <p class="cc-auth__sub">Join the arena — compete as a student or host as a college.</p>
+
+      <form>
+        <!-- Role toggle -->
+    <div class="cc-role" role="radiogroup" aria-label="Account type">
+
+  <input
+    type="radio"
+    [(ngModel)]="registerObj.role"
+    name="role"
+    id="roleStudent"
+    value="Student">
+
+  <label for="roleStudent">
+    <i class="bi bi-mortarboard-fill"></i>
+    <span>
+      <strong>Student</strong>
+      <small>Compete &amp; submit projects</small>
+    </span>
+  </label>
+
+
+  <input
+    type="radio"
+    [(ngModel)]="registerObj.role"
+    name="role"
+    id="roleCollege"
+    value="College">
+
+  <label for="roleCollege">
+    <i class="bi bi-building-fill"></i>
+    <span>
+      <strong>College</strong>
+      <small>Host &amp; judge competitions</small>
+    </span>
+  </label>
+
+</div>
+
+        
+            <div class="cc-field mb-0">
+              <label for="regFirstName">Full name</label>
+              <div class="cc-input-group">
+                <input type="text" [(ngModel)]="registerObj.fullName" class="form-control" id="regFirstName"
+                      name="fullName" placeholder="Aarav" autocomplete="given-name">
+                <i class="bi bi-person"></i>
+              </div>
+            </div>
+         
+          
+       
+        <div class="cc-field mt-3">
+          <label for="regEmail">College email</label>
+          <div class="cc-input-group">
+            <input type="email" name="email" [(ngModel)]="registerObj.email" class="form-control" id="regEmail"
+                   placeholder="you@college.edu" autocomplete="email">
+            <i class="bi bi-envelope"></i>
+          </div>
+          <small class="cc-field__hint">Use your official college email for instant verification.</small>
+        </div>
+
+        <div class="cc-field">
+          <label for="regCollege">College / institution</label>
+          <div class="cc-input-group">
+            <select class="form-select" name="collegeName" [(ngModel)]="registerObj.collegeName" id="regCollege">
+              <option selected disabled>Select your college</option>
+              <option>IIT Bhubaneswar</option>
+              <option>NIT Rourkela</option>
+              <option>XIM University</option>
+              <option>KIIT University</option>
+              <option>Other — add my college</option>
+            </select>
+            <i class="bi bi-building"></i>
+          </div>
+        </div>
+
+        <div class="cc-field">
+          <label for="regPassword">Password</label>
+          <div class="cc-input-group cc-input-group--password">
+            <input type="password" name="password" [(ngModel)]="registerObj.password" class="form-control" id="regPassword"
+                   placeholder="Minimum 8 characters" autocomplete="new-password">
+            <i class="bi bi-lock"></i>
+            <button type="button" class="cc-input-group__eye" aria-label="Show password">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+          <small class="cc-field__hint">Use 8+ characters with a mix of letters, numbers &amp; symbols.</small>
+        </div>
+
+        <div class="form-check cc-check mb-4">
+          <input class="form-check-input" type="checkbox" id="regTerms">
+          <label class="form-check-label" for="regTerms">
+            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+          </label>
+        </div>
+
+        <button type="button" class="btn cc-btn-primary" (click)="onRegister()">
+          Create account <i class="bi bi-arrow-right ms-1"></i>
+        </button>
+      </form>
+
+      <div class="cc-divider">or sign up with</div>
+
+      <div class="cc-social">
+        <a href="#"><i class="bi bi-google"></i> Google</a>
+        <a href="#"><i class="bi bi-github"></i> GitHub</a>
+      </div>
+
+      <p class="cc-auth__switch text-center mt-4 d-sm-none">
+        Already a member? <a href="#">Log in</a>
+      </p>
+    </div>
+
+    <div class="cc-auth__foot">
+      <a href="#">Terms</a>·<a href="#">Privacy</a>·<a href="#">Help</a>
+    </div>
+  </main>
+</div>

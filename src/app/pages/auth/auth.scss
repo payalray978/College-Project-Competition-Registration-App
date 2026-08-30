@@ -1,0 +1,453 @@
+/* ═══════════════════════════════════════════════
+   CampusClash — shared auth styles (login/register)
+   @use'd by login.component.scss & register.component.scss
+   ═══════════════════════════════════════════════ */
+
+// ---------- Design tokens (match landing page) ----------
+
+$ink:        #14103a;
+$violet:     #5b2eff;
+$violet-dk:  #4520d4;
+$pink:       #ff5d8f;
+$amber:      #ffb020;
+$teal:       #0fc2a7;
+$surface:    #f7f6fd;
+$card:       #ffffff;
+$muted:      #5d5a77;
+
+$grad-brand: linear-gradient(120deg, $violet 0%, $pink 55%, $amber 120%);
+$radius-lg:  1.5rem;
+$radius-md:  1rem;
+$shadow-sm:  0 6px 24px rgba(20, 16, 58, 0.08);
+$shadow-lg:  0 24px 60px rgba(20, 16, 58, 0.16);
+$ease:       cubic-bezier(0.22, 1, 0.36, 1);
+
+// ---------- Page shell ----------
+@mixin auth-host {
+  display: block;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: $ink;
+  background:
+    radial-gradient(46rem 26rem at 110% -10%, rgba($pink, 0.1), transparent 60%),
+    radial-gradient(40rem 24rem at -10% 110%, rgba($violet, 0.1), transparent 60%),
+    $surface;
+}
+
+@mixin auth-styles {
+  h1, h2, h3, .cc-brand { font-family: 'Sora', 'Inter', sans-serif; }
+
+  .cc-auth {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    @media (max-width: 991.98px) { grid-template-columns: 1fr; }
+  }
+
+  // ---------- Showcase panel (left) ----------
+  .cc-auth__panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: clamp(2rem, 4vw, 3.5rem);
+    margin: 1.25rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    color: #fff;
+    isolation: isolate;
+
+    @media (max-width: 991.98px) { display: none; }
+
+    img.cc-auth__photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      transition: transform 8s $ease;
+    }
+
+    &:hover img.cc-auth__photo { transform: scale(1.06); }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(200deg, rgba($ink, 0.15) 0%, rgba($ink, 0.85) 85%),
+        linear-gradient(120deg, rgba($violet, 0.35), rgba($pink, 0.2));
+    }
+  }
+
+  .cc-auth__quote {
+    max-width: 30rem;
+
+    blockquote {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.25rem, 2vw, 1.6rem);
+      font-weight: 600;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+
+      i { color: $amber; font-size: 1.9rem; display: block; margin-bottom: 0.75rem; }
+    }
+
+    figcaption {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+
+      img {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(#fff, 0.6);
+      }
+
+      strong { display: block; font-size: 0.95rem; }
+      span   { font-size: 0.8rem; color: rgba(#fff, 0.75); }
+    }
+  }
+
+  .cc-auth__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.95rem;
+      border-radius: 100px;
+      background: rgba(#fff, 0.12);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(#fff, 0.18);
+      font-size: 0.8rem;
+      font-weight: 600;
+
+      i { color: $amber; }
+    }
+  }
+
+  // ---------- Form column (right) ----------
+  .cc-auth__form-col {
+    display: flex;
+    flex-direction: column;
+    padding: clamp(1.5rem, 4vw, 3.5rem);
+  }
+
+  .cc-auth__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: clamp(2rem, 5vh, 3.5rem);
+  }
+
+  .cc-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: $ink;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+
+    &__mark {
+      display: grid;
+      place-items: center;
+      width: 2.3rem;
+      height: 2.3rem;
+      border-radius: 0.75rem;
+      background: $grad-brand;
+      color: #fff;
+      font-size: 1rem;
+      box-shadow: 0 8px 18px rgba($violet, 0.35);
+    }
+
+    &__accent {
+      background: $grad-brand;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .cc-auth__switch {
+    font-size: 0.9rem;
+    color: $muted;
+
+    a {
+      color: $violet-dk;
+      font-weight: 700;
+      text-decoration: none;
+
+      &:hover { text-decoration: underline; }
+    }
+  }
+
+  .cc-auth__card {
+    width: 100%;
+    max-width: 27.5rem;
+    margin: auto;
+    animation: cc-rise 0.6s $ease both;
+  }
+
+  .cc-auth__title {
+    font-size: clamp(1.65rem, 3vw, 2.1rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .cc-auth__sub {
+    color: $muted;
+    margin-bottom: 2rem;
+  }
+
+  // ---------- Fields ----------
+  .cc-field {
+    margin-bottom: 1.15rem;
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  .cc-input-group {
+    position: relative;
+
+    > i {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $muted;
+      font-size: 1.05rem;
+      pointer-events: none;
+      transition: color 0.2s ease;
+    }
+
+    .form-control, .form-select {
+      height: 3.2rem;
+      padding-left: 2.9rem;
+      border-radius: $radius-md;
+      border: 1.5px solid rgba($ink, 0.12);
+      background: $card;
+      font-size: 0.95rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+      &::placeholder { color: rgba($muted, 0.6); }
+
+      &:focus {
+        border-color: $violet;
+        box-shadow: 0 0 0 0.25rem rgba($violet, 0.12);
+      }
+
+      &:focus ~ i { color: $violet; }
+    }
+
+    .cc-input-group__eye {
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      background: transparent;
+      color: $muted;
+      padding: 0.5rem;
+      border-radius: 0.6rem;
+      transition: color 0.2s ease, background-color 0.2s ease;
+
+      &:hover, &:focus-visible { color: $violet-dk; background: rgba($violet, 0.08); }
+    }
+  }
+
+  // when eye button present, pad the input on the right
+  .cc-input-group--password .form-control { padding-right: 3rem; }
+
+  .cc-field__hint {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.78rem;
+    color: $muted;
+  }
+
+  .cc-check {
+    .form-check-input {
+      width: 1.15rem;
+      height: 1.15rem;
+      border: 1.5px solid rgba($ink, 0.25);
+      margin-top: 0.15rem;
+
+      &:checked { background-color: $violet; border-color: $violet; }
+      &:focus   { box-shadow: 0 0 0 0.25rem rgba($violet, 0.12); border-color: $violet; }
+    }
+
+    .form-check-label { font-size: 0.88rem; color: $muted; }
+
+    a { color: $violet-dk; font-weight: 600; text-decoration: none; &:hover { text-decoration: underline; } }
+  }
+
+  .cc-link {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: $violet-dk;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+
+  // ---------- Role toggle (register) ----------
+  .cc-role {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+
+    input { position: absolute; opacity: 0; pointer-events: none; }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.9rem 1rem;
+      border-radius: $radius-md;
+      border: 1.5px solid rgba($ink, 0.12);
+      background: $card;
+      cursor: pointer;
+      transition: border-color 0.25s ease, background-color 0.25s ease,
+                  transform 0.25s $ease, box-shadow 0.25s $ease;
+
+      i {
+        display: grid;
+        place-items: center;
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 0.75rem;
+        background: rgba($violet, 0.1);
+        color: $violet-dk;
+        font-size: 1.1rem;
+        transition: background 0.25s ease, color 0.25s ease;
+      }
+
+      strong { display: block; font-size: 0.9rem; }
+      small  { color: $muted; font-size: 0.75rem; }
+
+      &:hover { transform: translateY(-2px); box-shadow: $shadow-sm; }
+    }
+
+    input:checked + label {
+      border-color: $violet;
+      background: rgba($violet, 0.05);
+      box-shadow: 0 0 0 0.25rem rgba($violet, 0.1);
+
+      i { background: $grad-brand; color: #fff; }
+    }
+
+    input:focus-visible + label { box-shadow: 0 0 0 0.25rem rgba($violet, 0.25); }
+  }
+
+  // ---------- Buttons / divider / social ----------
+  .cc-btn-primary {
+    width: 100%;
+    height: 3.2rem;
+    font-weight: 700;
+    border-radius: 100px;
+    border: none;
+    color: #fff;
+    background: $grad-brand;
+    background-size: 160% 160%;
+    box-shadow: 0 10px 24px rgba($violet, 0.35);
+    transition: transform 0.25s $ease, box-shadow 0.25s $ease, background-position 0.25s $ease;
+
+    &:hover, &:focus-visible {
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba($violet, 0.45);
+      background-position: 80% 50%;
+    }
+  }
+
+  .cc-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    color: $muted;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+
+    &::before, &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba($ink, 0.1);
+    }
+  }
+
+  .cc-social {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      height: 3rem;
+      border-radius: 100px;
+      border: 1.5px solid rgba($ink, 0.12);
+      background: $card;
+      color: $ink;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: transform 0.25s $ease, box-shadow 0.25s $ease, border-color 0.25s ease;
+
+      i { font-size: 1.1rem; }
+      .bi-google { color: #ea4335; }
+      .bi-github { color: $ink; }
+
+      &:hover, &:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: $shadow-sm;
+        border-color: rgba($violet, 0.4);
+      }
+    }
+  }
+
+  .cc-auth__foot {
+    margin-top: clamp(1.5rem, 4vh, 2.5rem);
+    text-align: center;
+    font-size: 0.8rem;
+    color: $muted;
+
+    a { color: $muted; text-decoration: none; margin-inline: 0.4rem; &:hover { color: $violet-dk; } }
+  }
+
+  @keyframes cc-rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

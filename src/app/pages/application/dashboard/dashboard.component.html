@@ -1,0 +1,176 @@
+<!-- ═══ App navbar (logged-in) ═══ -->
+<nav class="navbar navbar-expand-lg cc-appbar">
+  <div class="container">
+    <a class="cc-brand" href="#">
+      <span class="cc-brand__mark"><i class="bi bi-trophy-fill"></i></span>
+      Campus<span>Clash</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#appNav"
+            aria-controls="appNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="appNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Competitions</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Submit project</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Students</a></li>
+      </ul>
+
+      <div class="dropdown">
+        <a class="cc-user dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=faces" alt="">
+          Aarav Sharma
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end cc-user-menu">
+          <li><a class="dropdown-item" href="#"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> My profile</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-folder2-open"></i> My projects</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right"></i> Log out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ Page ═══ -->
+<div class="cc-page">
+  <div class="container">
+
+    <div class="cc-page__head cc-fade-up">
+      <div>
+        <h1>Dashboard</h1>
+        <p>Welcome back, Aarav — here's how your season is going.</p>
+      </div>
+      <a href="#" class="btn cc-btn-primary">
+        <i class="bi bi-cloud-arrow-up-fill"></i> Submit new project
+      </a>
+    </div>
+
+    <!-- Stat cards -->
+    <div class="row g-4 mb-5">
+      <div class="col-sm-6 col-xl-3">
+        <div class="cc-stat-card cc-stat-card--violet">
+          <div class="cc-stat-card__top">
+            <span class="cc-stat-card__icon"><i class="bi bi-trophy-fill"></i></span>
+            <div>
+              <span class="cc-stat-card__label">Competitions</span>
+              <div class="cc-stat-card__value">3</div>
+            </div>
+          </div>
+          <a href="#" class="cc-stat-card__link">View competitions <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-xl-3">
+        <div class="cc-stat-card cc-stat-card--pink">
+          <div class="cc-stat-card__top">
+            <span class="cc-stat-card__icon"><i class="bi bi-check-circle-fill"></i></span>
+            <div>
+              <span class="cc-stat-card__label">Submitted projects</span>
+              <div class="cc-stat-card__value">2</div>
+            </div>
+          </div>
+          <a href="#" class="cc-stat-card__link">View projects <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-xl-3">
+        <div class="cc-stat-card cc-stat-card--amber">
+          <div class="cc-stat-card__top">
+            <span class="cc-stat-card__icon"><i class="bi bi-hourglass-split"></i></span>
+            <div>
+              <span class="cc-stat-card__label">Pending review</span>
+              <div class="cc-stat-card__value">1</div>
+            </div>
+          </div>
+          <a href="#" class="cc-stat-card__link">Check status <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-xl-3">
+        <div class="cc-stat-card cc-stat-card--teal">
+          <div class="cc-stat-card__top">
+            <span class="cc-stat-card__icon"><i class="bi bi-award-fill"></i></span>
+            <div>
+              <span class="cc-stat-card__label">Achievements</span>
+              <div class="cc-stat-card__value">1</div>
+            </div>
+          </div>
+          <a href="#" class="cc-stat-card__link">View achievements <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- My competitions -->
+    <div class="cc-panel cc-fade-up">
+      <div class="cc-panel__head">
+        <h2>My competitions</h2>
+        <a href="#" class="btn cc-btn-outline">View all</a>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-hover cc-table align-middle">
+          <thead>
+            <tr>
+              <th>Competition</th>
+              <th>Category</th>
+              <th>Registered</th>
+              <th>Deadline</th>
+              <th>Status</th>
+              <th class="text-end">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="cc-row-title">AI Innovation Challenge</span>
+                <span class="cc-row-sub">IIT Bhubaneswar</span>
+              </td>
+              <td>Artificial Intelligence</td>
+              <td>Apr 10, 2026</td>
+              <td class="cc-deadline--soon">May 30, 2026</td>
+              <td><span class="cc-pill cc-pill--progress">In progress</span></td>
+              <td class="text-end">
+                <a href="#" class="btn cc-btn-primary btn-sm me-1">Submit</a>
+                <a href="#" class="btn cc-btn-outline btn-sm">Details</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="cc-row-title">Web Development Hackathon</span>
+                <span class="cc-row-sub">NIT Rourkela</span>
+              </td>
+              <td>Web Development</td>
+              <td>Apr 15, 2026</td>
+              <td>Jun 15, 2026</td>
+              <td><span class="cc-pill cc-pill--progress">In progress</span></td>
+              <td class="text-end">
+                <a href="#" class="btn cc-btn-primary btn-sm me-1">Submit</a>
+                <a href="#" class="btn cc-btn-outline btn-sm">Details</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="cc-row-title">IoT Solutions Competition</span>
+                <span class="cc-row-sub">XIM University</span>
+              </td>
+              <td>Internet of Things</td>
+              <td>Apr 20, 2026</td>
+              <td>Jul 10, 2026</td>
+              <td><span class="cc-pill cc-pill--active">Submitted</span></td>
+              <td class="text-end">
+                <a href="#" class="btn cc-btn-soft btn-sm me-1">Resubmit</a>
+                <a href="#" class="btn cc-btn-outline btn-sm">Details</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>

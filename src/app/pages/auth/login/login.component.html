@@ -1,0 +1,99 @@
+<div class="cc-auth">
+
+  <!-- ═══ Showcase panel ═══ -->
+  <aside class="cc-auth__panel">
+    <img class="cc-auth__photo"
+         src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80&fit=crop"
+         alt="Students working together on campus">
+
+    <div class="cc-auth__badges">
+      <span><i class="bi bi-trophy-fill"></i> 620+ competitions</span>
+      <span><i class="bi bi-people-fill"></i> 48k students</span>
+      <span><i class="bi bi-building-fill"></i> 120+ colleges</span>
+    </div>
+
+    <figure class="cc-auth__quote">
+      <blockquote>
+        <i class="bi bi-quote"></i>
+        We found our co-founder, won our first prize money and got incubated —
+        all through one CampusClash hackathon.
+      </blockquote>
+      <figcaption>
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=96&h=96&fit=crop&crop=faces"
+             alt="Ananya Mishra">
+        <div>
+          <strong>Ananya Mishra</strong>
+          <span>Winner, Ignite Founders' Challenge 2025</span>
+        </div>
+      </figcaption>
+    </figure>
+  </aside>
+
+  <!-- ═══ Form column ═══ -->
+  <main class="cc-auth__form-col">
+    <div class="cc-auth__top">
+      <a class="cc-brand" href="#">
+        <span class="cc-brand__mark"><i class="bi bi-trophy-fill"></i></span>
+        Campus<span class="cc-brand__accent">Clash</span>
+      </a>
+      <span class="cc-auth__switch d-none d-sm-inline">
+        New here? <a href="#" routerLink="/register">Create an account</a>
+      </span>
+    </div>
+
+    <div class="cc-auth__card">
+      <h1 class="cc-auth__title">Welcome back <span aria-hidden="true">👋</span></h1>
+      <p class="cc-auth__sub">Log in to track your competitions, teams and results.</p>
+
+      <form (submit)="onLogin()" [formGroup]="loginForm">
+        <div class="cc-field">
+          <label for="loginEmail">College email</label>
+          <div class="cc-input-group">
+            <input type="email" formControlName="email" class="form-control" id="loginEmail"
+                   placeholder="you@college.edu" autocomplete="email">
+            <i class="bi bi-envelope"></i>
+          </div>
+        </div>
+
+        <div class="cc-field">
+          <label for="loginPassword">Password</label>
+          <div class="cc-input-group cc-input-group--password">
+            <input type="password" formControlName="password" class="form-control" id="loginPassword"
+                   placeholder="Enter your password" autocomplete="current-password">
+            <i class="bi bi-lock"></i>
+            <button type="button" class="cc-input-group__eye" aria-label="Show password">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-between mb-4">
+          <div class="form-check cc-check">
+            <input class="form-check-input" type="checkbox" id="rememberMe">
+            <label class="form-check-label" for="rememberMe">Remember me</label>
+          </div>
+          <a href="#" class="cc-link">Forgot password?</a>
+        </div>
+
+        <button type="button" (click)="onLogin()" class="btn cc-btn-primary">
+          Log in <i class="bi bi-arrow-right ms-1"></i>
+        </button>
+      </form>
+
+      <div class="cc-divider">or continue with</div>
+
+      <div class="cc-social">
+        <a href="#"><i class="bi bi-google"></i> Google</a>
+        <a href="#"><i class="bi bi-github"></i> GitHub</a>
+      </div>
+
+      <p class="cc-auth__switch text-center mt-4 d-sm-none">
+        New here? <a href="#">Create an account</a>
+      </p>
+    </div>
+
+    <div class="cc-auth__foot">
+      <a href="#">Terms</a>·<a href="#">Privacy</a>·<a href="#">Help</a>
+    </div>
+  </main>
+</div>

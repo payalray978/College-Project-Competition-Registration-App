@@ -1,0 +1,245 @@
+<!-- ═══ App navbar (logged-in) ═══ -->
+<nav class="navbar navbar-expand-lg cc-appbar">
+  <div class="container">
+    <a class="cc-brand" href="#">
+      <span class="cc-brand__mark"><i class="bi bi-trophy-fill"></i></span>
+      Campus<span>Clash</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#appNav"
+            aria-controls="appNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="appNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Competitions</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Submit project</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Students</a></li>
+      </ul>
+
+      <div class="dropdown">
+        <a class="cc-user dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=96&h=96&fit=crop&crop=faces" alt="">
+          Admin
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end cc-user-menu">
+          <li><a class="dropdown-item" href="#"><i class="bi bi-speedometer2"></i> Admin dashboard</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right"></i> Log out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ Page ═══ -->
+<div class="cc-page">
+  <div class="container">
+
+    <nav class="cc-crumbs" aria-label="Breadcrumb">
+      <a href="#">Admin dashboard</a>
+      <i class="bi bi-chevron-right"></i>
+      <span>Student management</span>
+    </nav>
+
+    <div class="cc-page__head cc-fade-up">
+      <div>
+        <h1>Students</h1>
+        <p>Search, filter and manage registered participants.</p>
+      </div>
+      <a href="#" class="btn cc-btn-primary"><i class="bi bi-download"></i> Export CSV</a>
+    </div>
+
+    <!-- Filters -->
+    <div class="cc-panel cc-fade-up mb-4">
+      <div class="cc-panel__body">
+        <div class="cc-filters">
+          <div class="cc-input-group">
+            <input type="search" class="form-control" placeholder="Search students by name or email…">
+            <i class="bi bi-search"></i>
+          </div>
+          <div class="cc-input-group cc-input-group--plain">
+            <select class="form-select" aria-label="Filter by college">
+              <option selected>All colleges</option>
+              <option>IIT Bhubaneswar</option>
+              <option>NIT Rourkela</option>
+              <option>XIM University</option>
+              <option>KIIT University</option>
+            </select>
+          </div>
+          <div class="cc-input-group cc-input-group--plain">
+            <select class="form-select" aria-label="Filter by status">
+              <option selected>All status</option>
+              <option>Active</option>
+              <option>Pending</option>
+              <option>Inactive</option>
+            </select>
+          </div>
+          <button type="button" class="btn cc-btn-primary"><i class="bi bi-funnel-fill"></i> Filter</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="cc-panel cc-fade-up">
+      <div class="table-responsive">
+        <table class="table table-hover cc-table align-middle">
+          <thead>
+            <tr>
+              <th style="width:2.5rem">
+                <input class="form-check-input" type="checkbox" aria-label="Select all">
+              </th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>College</th>
+              <th>Department</th>
+              <th>Registered</th>
+              <th>Status</th>
+              <th class="text-end">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input class="form-check-input" type="checkbox" aria-label="Select row"></td>
+              <td>
+                <div class="cc-person">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=faces" alt="">
+                  <div><span class="cc-row-title">Rohan Mehta</span><span class="cc-row-sub">Student</span></div>
+                </div>
+              </td>
+              <td>rohan.mehta&#64;college.edu</td>
+              <td>IIT Bhubaneswar</td>
+              <td>Computer Science</td>
+              <td>Apr 05, 2026</td>
+              <td><span class="cc-pill cc-pill--active">Active</span></td>
+              <td class="text-end">
+                <div class="dropdown">
+                  <button class="btn cc-btn-outline btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>
+                  <ul class="dropdown-menu dropdown-menu-end cc-actions-menu">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-eye"></i> View profile</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-pencil"></i> Edit</a></li>
+                    <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-slash-circle"></i> Deactivate</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><input class="form-check-input" type="checkbox" aria-label="Select row"></td>
+              <td>
+                <div class="cc-person">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=faces" alt="">
+                  <div><span class="cc-row-title">Sneha Patnaik</span><span class="cc-row-sub">Student</span></div>
+                </div>
+              </td>
+              <td>sneha.patnaik&#64;college.edu</td>
+              <td>NIT Rourkela</td>
+              <td>Electrical Engineering</td>
+              <td>Apr 07, 2026</td>
+              <td><span class="cc-pill cc-pill--active">Active</span></td>
+              <td class="text-end">
+                <div class="dropdown">
+                  <button class="btn cc-btn-outline btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>
+                  <ul class="dropdown-menu dropdown-menu-end cc-actions-menu">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-eye"></i> View profile</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-pencil"></i> Edit</a></li>
+                    <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-slash-circle"></i> Deactivate</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><input class="form-check-input" type="checkbox" aria-label="Select row"></td>
+              <td>
+                <div class="cc-person">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=faces" alt="">
+                  <div><span class="cc-row-title">Devansh Rao</span><span class="cc-row-sub">Student</span></div>
+                </div>
+              </td>
+              <td>devansh.rao&#64;college.edu</td>
+              <td>KIIT University</td>
+              <td>Computer Engineering</td>
+              <td>Apr 10, 2026</td>
+              <td><span class="cc-pill cc-pill--active">Active</span></td>
+              <td class="text-end">
+                <div class="dropdown">
+                  <button class="btn cc-btn-outline btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>
+                  <ul class="dropdown-menu dropdown-menu-end cc-actions-menu">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-eye"></i> View profile</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-pencil"></i> Edit</a></li>
+                    <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-slash-circle"></i> Deactivate</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><input class="form-check-input" type="checkbox" aria-label="Select row"></td>
+              <td>
+                <div class="cc-person">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=96&h=96&fit=crop&crop=faces" alt="">
+                  <div><span class="cc-row-title">Ananya Mishra</span><span class="cc-row-sub">Student</span></div>
+                </div>
+              </td>
+              <td>ananya.mishra&#64;college.edu</td>
+              <td>XIM University</td>
+              <td>Information Technology</td>
+              <td>Apr 12, 2026</td>
+              <td><span class="cc-pill cc-pill--pending">Pending</span></td>
+              <td class="text-end">
+                <div class="dropdown">
+                  <button class="btn cc-btn-outline btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>
+                  <ul class="dropdown-menu dropdown-menu-end cc-actions-menu">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-check-circle"></i> Approve</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-eye"></i> View profile</a></li>
+                    <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-x-circle"></i> Reject</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><input class="form-check-input" type="checkbox" aria-label="Select row"></td>
+              <td>
+                <div class="cc-person">
+                  <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=96&h=96&fit=crop&crop=faces" alt="">
+                  <div><span class="cc-row-title">Priya Nair</span><span class="cc-row-sub">Student</span></div>
+                </div>
+              </td>
+              <td>priya.nair&#64;college.edu</td>
+              <td>IIT Bhubaneswar</td>
+              <td>Mechanical Engineering</td>
+              <td>Apr 15, 2026</td>
+              <td><span class="cc-pill cc-pill--inactive">Inactive</span></td>
+              <td class="text-end">
+                <div class="dropdown">
+                  <button class="btn cc-btn-outline btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>
+                  <ul class="dropdown-menu dropdown-menu-end cc-actions-menu">
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-arrow-clockwise"></i> Reactivate</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-eye"></i> View profile</a></li>
+                    <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash"></i> Delete</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cc-panel__head border-0" style="border-top:1px solid rgba(20,16,58,.06)!important">
+        <span class="cc-row-sub">Showing 1–5 of 48,213 students</span>
+        <nav aria-label="Pagination">
+          <div class="d-flex gap-2">
+            <a href="#" class="btn cc-btn-outline btn-sm"><i class="bi bi-chevron-left"></i> Prev</a>
+            <a href="#" class="btn cc-btn-soft btn-sm">Next <i class="bi bi-chevron-right"></i></a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+  </div>
+</div>

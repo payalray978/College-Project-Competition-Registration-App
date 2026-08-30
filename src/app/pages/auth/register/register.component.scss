@@ -1,0 +1,5 @@
+@use '../auth' as *;
+
+:host { @include auth-host; }
+
+@include auth-styles;

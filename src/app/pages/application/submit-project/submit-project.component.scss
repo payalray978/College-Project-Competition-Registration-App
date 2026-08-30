@@ -1,0 +1,5 @@
+   @use '../application' as *;
+
+:host { @include app-host; }
+
+@include app-styles;

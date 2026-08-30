@@ -1,0 +1,559 @@
+/* ═══════════════════════════════════════════════
+   CampusClash — shared in-app styles
+   (dashboard / submit project / students)
+   @use'd by each page's component.scss
+   ═══════════════════════════════════════════════ */
+
+@use 'sass:color';
+
+// ---------- Design tokens (match landing + auth) ----------
+$ink:        #14103a;
+$violet:     #5b2eff;
+$violet-dk:  #4520d4;
+$pink:       #ff5d8f;
+$amber:      #ffb020;
+$teal:       #0fc2a7;
+$blue:       #2f80ed;
+$green:      #22b954;
+$red:        #ff3b5c;
+$surface:    #f7f6fd;
+$card:       #ffffff;
+$muted:      #5d5a77;
+
+$grad-brand: linear-gradient(120deg, $violet 0%, $pink 55%, $amber 120%);
+$radius-lg:  1.5rem;
+$radius-md:  1rem;
+$shadow-sm:  0 6px 24px rgba(20, 16, 58, 0.08);
+$shadow-lg:  0 24px 60px rgba(20, 16, 58, 0.16);
+$ease:       cubic-bezier(0.22, 1, 0.36, 1);
+
+@mixin app-host {
+  display: block;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: $ink;
+  background: $surface;
+}
+
+@mixin app-styles {
+  h1, h2, h3, h4, .cc-brand { font-family: 'Sora', 'Inter', sans-serif; }
+
+  // ---------- Top navbar (logged-in) ----------
+  .cc-appbar {
+    background:
+      radial-gradient(40rem 20rem at 100% -60%, rgba($pink, 0.35), transparent 60%),
+      linear-gradient(110deg, $violet-dk, $violet 70%);
+    padding-block: 0.7rem;
+    box-shadow: 0 10px 30px rgba($violet, 0.25);
+
+    .cc-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: #fff;
+      letter-spacing: -0.02em;
+
+      &__mark {
+        display: grid;
+        place-items: center;
+        width: 2.3rem;
+        height: 2.3rem;
+        border-radius: 0.75rem;
+        background: rgba(#fff, 0.15);
+        border: 1px solid rgba(#fff, 0.25);
+        color: $amber;
+        font-size: 1rem;
+      }
+    }
+
+    .nav-link {
+      color: rgba(#fff, 0.78);
+      font-weight: 600;
+      margin-inline: 0.3rem;
+      border-radius: 100px;
+      padding: 0.45rem 1rem;
+      transition: color 0.2s ease, background-color 0.2s ease;
+
+      &:hover { color: #fff; background: rgba(#fff, 0.1); }
+      &.active { color: #fff; background: rgba(#fff, 0.16); }
+    }
+
+    .navbar-toggler {
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      &:focus { box-shadow: none; }
+    }
+  }
+
+  .cc-user {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.35rem 0.9rem 0.35rem 0.4rem;
+    border-radius: 100px;
+    background: rgba(#fff, 0.12);
+    border: 1px solid rgba(#fff, 0.22);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &:hover, &:focus-visible { background: rgba(#fff, 0.2); color: #fff; }
+
+    img {
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(#fff, 0.5);
+    }
+  }
+
+  .cc-user-menu {
+    border: none;
+    border-radius: $radius-md;
+    box-shadow: $shadow-lg;
+    padding: 0.5rem;
+    margin-top: 0.6rem;
+
+    .dropdown-item {
+      border-radius: 0.6rem;
+      padding: 0.55rem 0.9rem;
+      font-weight: 500;
+      color: $ink;
+
+      i { width: 1.4rem; color: $violet-dk; }
+
+      &:hover { background: rgba($violet, 0.07); color: $violet-dk; }
+
+      &.text-danger i { color: inherit; }
+    }
+  }
+
+  // ---------- Page scaffolding ----------
+  .cc-page { padding: 2rem 0 4rem; }
+
+  .cc-crumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    color: $muted;
+    margin-bottom: 1.5rem;
+
+    a { color: $violet-dk; font-weight: 600; text-decoration: none; &:hover { text-decoration: underline; } }
+    i { font-size: 0.7rem; }
+  }
+
+  .cc-page__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    p { color: $muted; margin: 0; }
+  }
+
+  .cc-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    border-radius: 100px;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    color: #fff;
+    background: $grad-brand;
+    background-size: 160% 160%;
+    box-shadow: 0 10px 24px rgba($violet, 0.35);
+    transition: transform 0.25s $ease, box-shadow 0.25s $ease, background-position 0.25s $ease;
+
+    &:hover, &:focus-visible {
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba($violet, 0.45);
+      background-position: 80% 50%;
+    }
+  }
+
+  .cc-btn-soft {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 100px;
+    padding: 0.45rem 1.1rem;
+    color: $violet-dk;
+    background: rgba($violet, 0.08);
+    border: 1.5px solid transparent;
+    transition: background-color 0.2s ease, transform 0.25s $ease;
+
+    &:hover, &:focus-visible { background: rgba($violet, 0.14); color: $violet-dk; transform: translateY(-1px); }
+  }
+
+  .cc-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 100px;
+    padding: 0.45rem 1.1rem;
+    color: $ink;
+    background: transparent;
+    border: 1.5px solid rgba($ink, 0.15);
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.25s $ease;
+
+    &:hover, &:focus-visible { border-color: $violet; color: $violet-dk; transform: translateY(-1px); }
+  }
+
+  // ---------- Stat cards ----------
+  .cc-stat-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: $radius-lg;
+    background: $card;
+    border: 1px solid rgba($ink, 0.05);
+    box-shadow: $shadow-sm;
+    padding: 1.4rem 1.4rem 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s $ease, box-shadow 0.3s $ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: var(--stat-grad);
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: $shadow-lg;
+
+      .cc-stat-card__icon { transform: scale(1.1) rotate(-6deg); }
+    }
+
+    &__top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 1.2rem;
+    }
+
+    &__icon {
+      display: grid;
+      place-items: center;
+      width: 3.2rem;
+      height: 3.2rem;
+      border-radius: 1rem;
+      color: #fff;
+      font-size: 1.35rem;
+      background: var(--stat-grad);
+      box-shadow: 0 10px 22px var(--stat-shadow);
+      transition: transform 0.3s $ease;
+      flex-shrink: 0;
+    }
+
+    &__label { color: $muted; font-size: 0.85rem; font-weight: 600; }
+
+    &__value {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    &__link {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0;
+      border-top: 1px dashed rgba($ink, 0.12);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: $violet-dk;
+      text-decoration: none;
+
+      i { transition: transform 0.25s $ease; }
+      &:hover i { transform: translateX(4px); }
+    }
+
+    &--violet { --stat-grad: linear-gradient(135deg, #{$violet}, #{color.adjust($violet, $lightness: 14%)}); --stat-shadow: #{rgba($violet, 0.35)}; }
+    &--pink   { --stat-grad: linear-gradient(135deg, #{$pink}, #{color.adjust($pink, $lightness: 10%)});     --stat-shadow: #{rgba($pink, 0.35)}; }
+    &--amber  { --stat-grad: linear-gradient(135deg, #{color.adjust($amber, $lightness: -4%)}, #ff7a45);     --stat-shadow: #{rgba($amber, 0.4)}; }
+    &--teal   { --stat-grad: linear-gradient(135deg, #{$teal}, #{color.adjust($teal, $lightness: 10%)});     --stat-shadow: #{rgba($teal, 0.35)}; }
+  }
+
+  // ---------- Panels & tables ----------
+  .cc-panel {
+    border-radius: $radius-lg;
+    background: $card;
+    border: 1px solid rgba($ink, 0.05);
+    box-shadow: $shadow-sm;
+    overflow: hidden;
+
+    &__head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.4rem 1.5rem;
+      border-bottom: 1px solid rgba($ink, 0.06);
+
+      h2 { font-size: 1.15rem; font-weight: 700; margin: 0; }
+    }
+
+    &__body { padding: 1.5rem; }
+  }
+
+  .cc-table {
+    margin: 0;
+    --bs-table-hover-bg: #{rgba($violet, 0.035)};
+
+    thead th {
+      padding: 0.9rem 1.5rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: $muted;
+      background: $surface;
+      border-bottom: 1px solid rgba($ink, 0.06);
+      white-space: nowrap;
+    }
+
+    tbody td {
+      padding: 1rem 1.5rem;
+      vertical-align: middle;
+      border-color: rgba($ink, 0.05);
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    tbody tr { transition: background-color 0.15s ease; }
+  }
+
+  .cc-row-title { font-weight: 700; }
+  .cc-row-sub   { display: block; font-size: 0.78rem; color: $muted; font-weight: 500; }
+
+  .cc-person {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    img {
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba($violet, 0.25);
+    }
+  }
+
+  .cc-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.32rem 0.8rem;
+    border-radius: 100px;
+    font-size: 0.76rem;
+    font-weight: 700;
+
+    &::before { content: ''; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: currentColor; }
+
+    &--progress { color: color.adjust($amber, $lightness: -22%); background: rgba($amber, 0.16); }
+    &--active   { color: color.adjust($green, $lightness: -12%); background: rgba($green, 0.14); }
+    &--pending  { color: color.adjust($amber, $lightness: -22%); background: rgba($amber, 0.16); }
+    &--inactive { color: $muted; background: rgba($ink, 0.08); }
+    &--danger   { color: color.adjust($red, $lightness: -10%); background: rgba($red, 0.12); }
+    &--info     { color: color.adjust($blue, $lightness: -10%); background: rgba($blue, 0.12); }
+  }
+
+  .cc-deadline--soon { color: $red; font-weight: 700; }
+
+  // ---------- Forms ----------
+  .cc-field {
+    margin-bottom: 1.35rem;
+
+    label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+    }
+  }
+
+  .cc-input-group {
+    position: relative;
+
+    > i {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $muted;
+      font-size: 1.05rem;
+      pointer-events: none;
+    }
+
+    .form-control, .form-select {
+      min-height: 3.2rem;
+      padding-left: 2.9rem;
+      border-radius: $radius-md;
+      border: 1.5px solid rgba($ink, 0.12);
+      font-size: 0.95rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+      &::placeholder { color: rgba($muted, 0.6); }
+
+      &:focus {
+        border-color: $violet;
+        box-shadow: 0 0 0 0.25rem rgba($violet, 0.12);
+      }
+    }
+
+    textarea.form-control { padding-top: 0.9rem; }
+
+    &--plain .form-control,
+    &--plain .form-select { padding-left: 1rem; }
+  }
+
+  .cc-field__hint { display: block; margin-top: 0.4rem; font-size: 0.78rem; color: $muted; }
+
+  // Upload dropzone
+  .cc-dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    text-align: center;
+    padding: 2.25rem 1.5rem;
+    border-radius: $radius-md;
+    border: 2px dashed rgba($violet, 0.35);
+    background: rgba($violet, 0.04);
+    color: $muted;
+    cursor: pointer;
+    transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s $ease;
+
+    i { font-size: 2rem; color: $violet; }
+
+    strong { color: $ink; }
+    small  { font-size: 0.78rem; }
+
+    &:hover, &:focus-visible {
+      border-color: $violet;
+      background: rgba($violet, 0.08);
+      transform: translateY(-2px);
+    }
+  }
+
+  // Guidelines sidebar
+  .cc-guidelines {
+    li {
+      display: flex;
+      gap: 0.7rem;
+      padding: 0.6rem 0;
+      font-size: 0.92rem;
+      color: $muted;
+
+      i { color: $teal; font-size: 1.05rem; flex-shrink: 0; }
+
+      + li { border-top: 1px dashed rgba($ink, 0.08); }
+    }
+  }
+
+  .cc-selected-comp {
+    border-radius: $radius-md;
+    padding: 1.25rem;
+    background:
+      radial-gradient(16rem 8rem at 100% 0%, rgba($pink, 0.25), transparent 60%),
+      linear-gradient(120deg, $violet-dk, $violet);
+    color: #fff;
+
+    h3 { font-size: 1.02rem; font-weight: 700; }
+
+    p { color: rgba(#fff, 0.85); font-size: 0.85rem; margin: 0; }
+
+    .cc-selected-comp__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.1rem;
+      margin-top: 0.9rem;
+      font-size: 0.8rem;
+      color: rgba(#fff, 0.85);
+
+      i { color: $amber; margin-right: 0.3rem; }
+    }
+  }
+
+  // ---------- Search / filter bar ----------
+  .cc-filters {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+    gap: 0.9rem;
+
+    @media (max-width: 767.98px) { grid-template-columns: 1fr; }
+  }
+
+  // ---------- Actions dropdown (tables) ----------
+  .cc-actions-menu {
+    border: none;
+    border-radius: $radius-md;
+    box-shadow: $shadow-lg;
+    padding: 0.4rem;
+
+    .dropdown-item {
+      border-radius: 0.55rem;
+      font-size: 0.88rem;
+      padding: 0.5rem 0.8rem;
+
+      i { width: 1.3rem; }
+
+      &:hover { background: rgba($violet, 0.07); }
+    }
+  }
+
+  // ---------- Misc ----------
+  .cc-fade-up { animation: cc-rise 0.55s $ease both; }
+
+  @keyframes cc-rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 991.98px) {
+    .cc-appbar .navbar-collapse {
+      background: rgba(#000, 0.15);
+      border-radius: $radius-md;
+      padding: 0.75rem 1rem;
+      margin-top: 0.75rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

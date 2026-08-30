@@ -1,0 +1,519 @@
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav class="navbar navbar-expand-lg cc-navbar fixed-top">
+  <div class="container">
+    <a class="navbar-brand cc-brand" href="#">
+      <span class="cc-brand__mark"><i class="bi bi-trophy-fill"></i></span>
+      Campus<span class="cc-brand__accent">Clash</span>
+    </a>
+
+    <button class="navbar-toggler cc-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#ccNav" aria-controls="ccNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="ccNav">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 cc-navlinks">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#competitions">Competitions</a></li>
+        <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+        <li class="nav-item"><a class="nav-link" href="#how-it-works">How it works</a></li>
+        <li class="nav-item"><a class="nav-link" href="#winners">Winners</a></li>
+      </ul>
+      <div class="d-flex gap-2 cc-nav-actions">
+        <a href="#" class="btn cc-btn-ghost" routerLink="/login">Log&nbsp;in</a>
+        <a href="#" class="btn cc-btn-primary " routerLink="/register">Register free <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="cc-hero" id="home">
+  <div class="cc-hero__blob cc-hero__blob--1" aria-hidden="true"></div>
+  <div class="cc-hero__blob cc-hero__blob--2" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <!-- Copy -->
+      <div class="col-lg-6">
+        <span class="cc-eyebrow">
+          <i class="bi bi-stars"></i> 120+ colleges &middot; one arena
+        </span>
+
+        <h1 class="cc-hero__title">
+          Where campus talent<br>
+          goes to <span class="cc-hero__title-gradient">compete&nbsp;&amp;&nbsp;win</span>
+        </h1>
+
+        <p class="cc-hero__lead">
+          Discover competitions hosted by colleges across the country, register in
+          minutes, submit your project online and track results — all in one place.
+        </p>
+
+        <div class="d-flex flex-wrap gap-3 cc-hero__actions">
+          <a href="#competitions" class="btn cc-btn-primary btn-lg">
+            Explore competitions <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+          <a href="#how-it-works" class="btn cc-btn-outline btn-lg">
+            <i class="bi bi-play-circle me-2"></i>How it works
+          </a>
+        </div>
+
+        <div class="cc-hero__proof d-flex align-items-center flex-wrap gap-3">
+          <div class="cc-avatars">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=faces" alt="Student participant">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=faces" alt="Student participant">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=faces" alt="Student participant">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=96&h=96&fit=crop&crop=faces" alt="Student participant">
+          </div>
+          <div>
+            <strong class="d-block">48,000+ students</strong>
+            <span class="text-muted-2">registered this season</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collage -->
+      <div class="col-lg-6">
+        <div class="cc-collage">
+          <div class="cc-collage__main">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&q=80&fit=crop"
+                 alt="Students collaborating on a competition project" class="img-fluid">
+          </div>
+
+          <div class="cc-chip cc-chip--live">
+            <span class="cc-chip__dot"></span>
+            <div>
+              <strong>National Hackathon</strong>
+              <small>Live &middot; 1,248 teams competing</small>
+            </div>
+          </div>
+
+          <div class="cc-chip cc-chip--prize">
+            <i class="bi bi-trophy-fill"></i>
+            <div>
+              <strong>₹5,00,000</strong>
+              <small>total prize pool</small>
+            </div>
+          </div>
+
+          <div class="cc-chip cc-chip--submit">
+            <i class="bi bi-cloud-arrow-up-fill"></i>
+            <div>
+              <strong>Project submitted!</strong>
+              <small>Team RoboVerse &middot; just now</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════ MARQUEE RIBBON ═══════════════ -->
+<div class="cc-marquee" aria-hidden="true">
+  <div class="cc-marquee__track">
+    <span *ngFor="let item of [1,2]" class="cc-marquee__group">
+      <span><i class="bi bi-code-slash"></i> Hackathons</span>
+      <span><i class="bi bi-robot"></i> Robotics</span>
+      <span><i class="bi bi-mic-fill"></i> Debate</span>
+      <span><i class="bi bi-palette-fill"></i> Design</span>
+      <span><i class="bi bi-lightbulb-fill"></i> Startup pitch</span>
+      <span><i class="bi bi-music-note-beamed"></i> Cultural fest</span>
+      <span><i class="bi bi-calculator-fill"></i> Math olympiad</span>
+      <span><i class="bi bi-camera-reels-fill"></i> Film making</span>
+    </span>
+  </div>
+</div>
+
+<!-- ═══════════════ UPCOMING COMPETITIONS ═══════════════ -->
+<section class="cc-section" id="competitions">
+  <div class="container">
+    <div class="cc-section__head">
+      <div>
+        <span class="cc-eyebrow"><i class="bi bi-calendar-event"></i> Upcoming</span>
+        <h2 class="cc-section__title">Competitions open for registration</h2>
+      </div>
+      <a href="#" class="btn cc-btn-outline d-none d-md-inline-flex">
+        View all <i class="bi bi-arrow-right ms-1"></i>
+      </a>
+    </div>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-6 col-xl-3">
+        <article class="cc-card">
+          <div class="cc-card__media">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80&fit=crop" alt="Hackathon teams coding">
+            <span class="cc-card__badge cc-badge--violet"><i class="bi bi-code-slash"></i> Hackathon</span>
+            <span class="cc-card__deadline"><i class="bi bi-clock"></i> 6 days left</span>
+          </div>
+          <div class="cc-card__body">
+            <h3>CodeStorm National Hackathon</h3>
+            <p class="cc-card__host"><i class="bi bi-building"></i> IIT Bhubaneswar</p>
+            <ul class="cc-card__meta">
+              <li><i class="bi bi-calendar3"></i> 12–14 Sep 2026</li>
+              <li><i class="bi bi-people"></i> Teams of 2–4</li>
+            </ul>
+            <div class="cc-card__foot">
+              <span class="cc-card__prize"><i class="bi bi-trophy-fill"></i> ₹2,00,000</span>
+              <a href="#" class="btn cc-btn-primary btn-sm">Register</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 col-xl-3">
+        <article class="cc-card">
+          <div class="cc-card__media">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80&fit=crop" alt="Robotics competition robot">
+            <span class="cc-card__badge cc-badge--pink"><i class="bi bi-robot"></i> Robotics</span>
+            <span class="cc-card__deadline"><i class="bi bi-clock"></i> 12 days left</span>
+          </div>
+          <div class="cc-card__body">
+            <h3>RoboWars Inter-College League</h3>
+            <p class="cc-card__host"><i class="bi bi-building"></i> NIT Rourkela</p>
+            <ul class="cc-card__meta">
+              <li><i class="bi bi-calendar3"></i> 20–21 Sep 2026</li>
+              <li><i class="bi bi-people"></i> Teams of 3–5</li>
+            </ul>
+            <div class="cc-card__foot">
+              <span class="cc-card__prize"><i class="bi bi-trophy-fill"></i> ₹1,50,000</span>
+              <a href="#" class="btn cc-btn-primary btn-sm">Register</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-xl-3">
+        <article class="cc-card">
+          <div class="cc-card__media">
+            <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80&fit=crop" alt="Student pitching a startup idea on stage">
+            <span class="cc-card__badge cc-badge--amber"><i class="bi bi-lightbulb-fill"></i> Startup pitch</span>
+            <span class="cc-card__deadline"><i class="bi bi-clock"></i> 18 days left</span>
+          </div>
+          <div class="cc-card__body">
+            <h3>Ignite Founders' Challenge</h3>
+            <p class="cc-card__host"><i class="bi bi-building"></i> XIM University</p>
+            <ul class="cc-card__meta">
+              <li><i class="bi bi-calendar3"></i> 27 Sep 2026</li>
+              <li><i class="bi bi-people"></i> Solo or teams of 2</li>
+            </ul>
+            <div class="cc-card__foot">
+              <span class="cc-card__prize"><i class="bi bi-trophy-fill"></i> ₹3,00,000</span>
+              <a href="#" class="btn cc-btn-primary btn-sm">Register</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6 col-xl-3">
+        <article class="cc-card">
+          <div class="cc-card__media">
+            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80&fit=crop" alt="Design tools and colorful artwork">
+            <span class="cc-card__badge cc-badge--teal"><i class="bi bi-palette-fill"></i> Design</span>
+            <span class="cc-card__deadline"><i class="bi bi-clock"></i> 24 days left</span>
+          </div>
+          <div class="cc-card__body">
+            <h3>PixelCraft UI/UX Sprint</h3>
+            <p class="cc-card__host"><i class="bi bi-building"></i> Symbiosis Institute of Design</p>
+            <ul class="cc-card__meta">
+              <li><i class="bi bi-calendar3"></i> 3–4 Oct 2026</li>
+              <li><i class="bi bi-people"></i> Solo entries</li>
+            </ul>
+            <div class="cc-card__foot">
+              <span class="cc-card__prize"><i class="bi bi-trophy-fill"></i> ₹75,000</span>
+              <a href="#" class="btn cc-btn-primary btn-sm">Register</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="text-center mt-4 d-md-none">
+      <a href="#" class="btn cc-btn-outline">View all competitions <i class="bi bi-arrow-right ms-1"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CATEGORIES ═══════════════ -->
+<section class="cc-section cc-section--tint" id="categories">
+  <div class="container">
+    <div class="cc-section__head cc-section__head--center">
+      <span class="cc-eyebrow"><i class="bi bi-grid-fill"></i> Categories</span>
+      <h2 class="cc-section__title">Every kind of competitor belongs here</h2>
+      <p class="cc-section__sub">From code to canvas to center stage — pick your arena.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-3">
+        <a href="#" class="cc-cat cc-cat--violet">
+          <span class="cc-cat__icon"><i class="bi bi-code-slash"></i></span>
+          <h3>Coding &amp; Hackathons</h3>
+          <p>142 events</p>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <a href="#" class="cc-cat cc-cat--pink">
+          <span class="cc-cat__icon"><i class="bi bi-robot"></i></span>
+          <h3>Robotics &amp; IoT</h3>
+          <p>58 events</p>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <a href="#" class="cc-cat cc-cat--amber">
+          <span class="cc-cat__icon"><i class="bi bi-lightbulb-fill"></i></span>
+          <h3>Startup &amp; Business</h3>
+          <p>73 events</p>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <a href="#" class="cc-cat cc-cat--teal">
+          <span class="cc-cat__icon"><i class="bi bi-palette-fill"></i></span>
+          <h3>Design &amp; Art</h3>
+          <p>91 events</p>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <a href="#" class="cc-cat cc-cat--blue">
+          <span class="cc-cat__icon"><i class="bi bi-mic-fill"></i></span>
+          <h3>Debate &amp; Quiz</h3>
+          <p>64 events</p>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <a href="#" class="cc-cat cc-cat--rose">
+          <span class="cc-cat__icon"><i class="bi bi-music-note-beamed"></i></span>
+          <h3>Music &amp; Dance</h3>
+          <p>86 events</p>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <a href="#" class="cc-cat cc-cat--green">
+          <span class="cc-cat__icon"><i class="bi bi-camera-reels-fill"></i></span>
+          <h3>Film &amp; Photography</h3>
+          <p>39 events</p>
+        </a>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <a href="#" class="cc-cat cc-cat--orange">
+          <span class="cc-cat__icon"><i class="bi bi-journal-text"></i></span>
+          <h3>Research &amp; Papers</h3>
+          <p>47 events</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ HOW IT WORKS ═══════════════ -->
+<section class="cc-section" id="how-it-works">
+  <div class="container">
+    <div class="cc-section__head cc-section__head--center">
+      <span class="cc-eyebrow"><i class="bi bi-signpost-2"></i> How it works</span>
+      <h2 class="cc-section__title">From sign-up to spotlight in four steps</h2>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="cc-step">
+          <span class="cc-step__num">1</span>
+          <span class="cc-step__icon cc-step__icon--violet"><i class="bi bi-person-plus-fill"></i></span>
+          <h3>Create your profile</h3>
+          <p>Sign up with your college email and build a profile that showcases your skills and interests.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="cc-step">
+          <span class="cc-step__num">2</span>
+          <span class="cc-step__icon cc-step__icon--pink"><i class="bi bi-search-heart-fill"></i></span>
+          <h3>Find &amp; register</h3>
+          <p>Browse competitions by category, college or prize — then register solo or invite your team.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="cc-step">
+          <span class="cc-step__num">3</span>
+          <span class="cc-step__icon cc-step__icon--amber"><i class="bi bi-cloud-arrow-up-fill"></i></span>
+          <h3>Submit your project</h3>
+          <p>Upload your project, deck or demo video before the deadline and track your submission status.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="cc-step">
+          <span class="cc-step__num">4</span>
+          <span class="cc-step__icon cc-step__icon--teal"><i class="bi bi-award-fill"></i></span>
+          <h3>Get judged &amp; win</h3>
+          <p>Judges score entries on the platform. Results, certificates and prizes land straight in your dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PREVIOUS WINNERS ═══════════════ -->
+<section class="cc-section cc-section--dark" id="winners">
+  <div class="container">
+    <div class="cc-section__head">
+      <div>
+        <span class="cc-eyebrow cc-eyebrow--light"><i class="bi bi-trophy"></i> Hall of fame</span>
+        <h2 class="cc-section__title">Last season's champions</h2>
+      </div>
+      <a href="#" class="btn cc-btn-outline-light d-none d-md-inline-flex">
+        All winners <i class="bi bi-arrow-right ms-1"></i>
+      </a>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <article class="cc-winner">
+          <span class="cc-winner__rank"><i class="bi bi-trophy-fill"></i> Champion</span>
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&fit=crop" alt="Winning team celebrating together">
+          <div class="cc-winner__body">
+            <h3>Team RoboVerse</h3>
+            <p class="cc-winner__project">"AgriBot" — autonomous crop-monitoring rover</p>
+            <div class="cc-winner__meta">
+              <span><i class="bi bi-building"></i> NIT Rourkela</span>
+              <span><i class="bi bi-cash-stack"></i> ₹2,00,000</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <article class="cc-winner">
+          <span class="cc-winner__rank"><i class="bi bi-trophy-fill"></i> Champion</span>
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80&fit=crop" alt="Students presenting their winning project">
+          <div class="cc-winner__body">
+            <h3>Ananya Mishra</h3>
+            <p class="cc-winner__project">"MediLink" — rural telemedicine pitch, Ignite 2025</p>
+            <div class="cc-winner__meta">
+              <span><i class="bi bi-building"></i> XIM University</span>
+              <span><i class="bi bi-cash-stack"></i> ₹3,00,000</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <article class="cc-winner">
+          <span class="cc-winner__rank"><i class="bi bi-trophy-fill"></i> Champion</span>
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80&fit=crop" alt="Hackathon winners working late at their laptops">
+          <div class="cc-winner__body">
+            <h3>Team NullPointers</h3>
+            <p class="cc-winner__project">"SahayakAI" — sign-language tutor, CodeStorm 2025</p>
+            <div class="cc-winner__meta">
+              <span><i class="bi bi-building"></i> IIT Bhubaneswar</span>
+              <span><i class="bi bi-cash-stack"></i> ₹1,50,000</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="row g-3 cc-stats">
+      <div class="col-6 col-lg-3"><div class="cc-stat"><strong>620+</strong><span>competitions hosted</span></div></div>
+      <div class="col-6 col-lg-3"><div class="cc-stat"><strong>48k</strong><span>student participants</span></div></div>
+      <div class="col-6 col-lg-3"><div class="cc-stat"><strong>₹4.2 Cr</strong><span>in prizes awarded</span></div></div>
+      <div class="col-6 col-lg-3"><div class="cc-stat"><strong>120+</strong><span>partner colleges</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="cc-section cc-cta-wrap">
+  <div class="container">
+    <div class="cc-cta">
+      <div class="cc-cta__glow" aria-hidden="true"></div>
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <h2>Your next win is one registration away.</h2>
+          <p>Join 48,000+ students competing across 120+ colleges — or bring your college on board and host your own competition.</p>
+        </div>
+        <div class="col-lg-4">
+          <div class="d-flex flex-column flex-sm-row flex-lg-column gap-3">
+            <a href="#" class="btn cc-btn-light btn-lg">
+              <i class="bi bi-mortarboard-fill me-2"></i>Join as a student
+            </a>
+            <a href="#" class="btn cc-btn-outline-light btn-lg">
+              <i class="bi bi-building me-2"></i>Host as a college
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="cc-footer">
+  <div class="container">
+    <div class="row g-4 g-lg-5">
+      <div class="col-lg-4">
+        <a class="cc-brand cc-brand--footer" href="#">
+          <span class="cc-brand__mark"><i class="bi bi-trophy-fill"></i></span>
+          Campus<span class="cc-brand__accent">Clash</span>
+        </a>
+        <p class="cc-footer__about">
+          The competition arena for India's campuses. Colleges host, students
+          compete, projects get seen, talent gets rewarded.
+        </p>
+        <div class="cc-footer__social">
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" aria-label="Discord"><i class="bi bi-discord"></i></a>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#competitions">Competitions</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#winners">Winners</a></li>
+          <li><a href="#">Leaderboard</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <h4>For students</h4>
+        <ul>
+          <li><a href="#">Create account</a></li>
+          <li><a href="#">Find a team</a></li>
+          <li><a href="#">Submission guide</a></li>
+          <li><a href="#">Certificates</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <h4>For colleges</h4>
+        <ul>
+          <li><a href="#">Host a competition</a></li>
+          <li><a href="#">Judging tools</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Success stories</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-12 col-lg-2">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help center</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cc-footer__bar">
+      <span>&copy; 2026 CampusClash. All rights reserved.</span>
+      <span>Made with <i class="bi bi-heart-fill"></i> for student innovators</span>
+    </div>
+  </div>
+</footer>

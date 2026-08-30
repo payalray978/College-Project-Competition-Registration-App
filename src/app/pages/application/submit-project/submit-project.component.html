@@ -1,0 +1,162 @@
+<!-- ═══ App navbar (logged-in) ═══ -->
+<nav class="navbar navbar-expand-lg cc-appbar">
+  <div class="container">
+    <a class="cc-brand" href="#">
+      <span class="cc-brand__mark"><i class="bi bi-trophy-fill"></i></span>
+      Campus<span>Clash</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#appNav"
+            aria-controls="appNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="appNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Competitions</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Submit project</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Students</a></li>
+      </ul>
+
+      <div class="dropdown">
+        <a class="cc-user dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=faces" alt="">
+          Aarav Sharma
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end cc-user-menu">
+          <li><a class="dropdown-item" href="#"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> My profile</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-folder2-open"></i> My projects</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right"></i> Log out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ Page ═══ -->
+<div class="cc-page">
+  <div class="container">
+
+    <nav class="cc-crumbs" aria-label="Breadcrumb">
+      <a href="#">Dashboard</a>
+      <i class="bi bi-chevron-right"></i>
+      <span>Submit project</span>
+    </nav>
+
+    <div class="cc-page__head cc-fade-up">
+      <div>
+        <h1>Submit your project</h1>
+        <p>Upload your work before the deadline — you can resubmit until judging begins.</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Form -->
+      <div class="col-lg-8">
+        <div class="cc-panel cc-fade-up">
+          <div class="cc-panel__body">
+            <form>
+              <div class="cc-field">
+                <label for="spCompetition">Select competition</label>
+                <div class="cc-input-group">
+                  <select class="form-select" id="spCompetition">
+                    <option selected disabled>Choose a competition…</option>
+                    <option>AI Innovation Challenge — IIT Bhubaneswar</option>
+                    <option>Web Development Hackathon — NIT Rourkela</option>
+                    <option>IoT Solutions Competition — XIM University</option>
+                  </select>
+                  <i class="bi bi-trophy"></i>
+                </div>
+              </div>
+
+              <div class="cc-field">
+                <label for="spTitle">Project title</label>
+                <div class="cc-input-group">
+                  <input type="text" class="form-control" id="spTitle" placeholder="e.g. AgriBot — autonomous crop-monitoring rover">
+                  <i class="bi bi-lightbulb"></i>
+                </div>
+              </div>
+
+              <div class="cc-field">
+                <label for="spDescription">Project description</label>
+                <div class="cc-input-group cc-input-group--plain">
+                  <textarea class="form-control" id="spDescription" rows="5"
+                            placeholder="Describe the problem, your solution, the tech stack and what makes it stand out…"></textarea>
+                </div>
+                <small class="cc-field__hint">Minimum 100 words. Judges read this first — make it count.</small>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="cc-field">
+                    <label for="spRepo">Repository / demo link</label>
+                    <div class="cc-input-group">
+                      <input type="url" class="form-control" id="spRepo" placeholder="https://github.com/team/project">
+                      <i class="bi bi-link-45deg"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="cc-field">
+                    <label for="spTeam">Team members</label>
+                    <div class="cc-input-group">
+                      <input type="text" class="form-control" id="spTeam" placeholder="Comma-separated names or emails">
+                      <i class="bi bi-people"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cc-field">
+                <label for="spFiles">Project files</label>
+                <label class="cc-dropzone" for="spFiles">
+                  <i class="bi bi-cloud-arrow-up"></i>
+                  <span><strong>Click to upload</strong> or drag &amp; drop</span>
+                  <small>ZIP, PDF or MP4 · up to 100 MB</small>
+                </label>
+                <input type="file" id="spFiles" class="d-none" multiple>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 justify-content-end pt-2">
+                <button type="button" class="btn cc-btn-outline">Save draft</button>
+                <button type="submit" class="btn cc-btn-primary">
+                  <i class="bi bi-send-fill"></i> Submit project
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <div class="cc-panel cc-fade-up mb-4">
+          <div class="cc-panel__head"><h2>Submission guidelines</h2></div>
+          <div class="cc-panel__body pt-3">
+            <ul class="cc-guidelines list-unstyled mb-0">
+              <li><i class="bi bi-check-circle-fill"></i> Ensure your project addresses the competition requirements</li>
+              <li><i class="bi bi-check-circle-fill"></i> Include a detailed description of your project</li>
+              <li><i class="bi bi-check-circle-fill"></i> Upload all required project files</li>
+              <li><i class="bi bi-check-circle-fill"></i> Provide clear installation / setup instructions</li>
+              <li><i class="bi bi-check-circle-fill"></i> List all team members who contributed</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cc-selected-comp cc-fade-up">
+          <h3><i class="bi bi-trophy-fill me-2"></i>Selected competition</h3>
+          <p>AI Innovation Challenge — build an AI solution for a real campus or community problem.</p>
+          <div class="cc-selected-comp__meta">
+            <span><i class="bi bi-calendar3"></i> Deadline May 30, 2026</span>
+            <span><i class="bi bi-cash-stack"></i> ₹2,00,000</span>
+            <span><i class="bi bi-people"></i> Teams of 2–4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
